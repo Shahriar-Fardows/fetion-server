@@ -47,42 +47,42 @@ async function run() {
     
 
 
-    // // order list
-    // app.get("/orders", async (req, res) => {
-    //   const allProduct = orderData.find();
-    //   const productsInfo = await allProduct.toArray();
-    //   res.send(productsInfo);
-    // });
-    // // single order
-    // app.get("/orders/:id", async (req, res) => {
-    //   const id = req.params.id;
-    //   const query = { _id: new ObjectId(id) };
-    //   const result = await orderData.findOne(query);
-    //   res.send(result);
-    // });
+    // order list
+    app.get("/orders", async (req, res) => {
+      const allProduct = orderData.find();
+      const productsInfo = await allProduct.toArray();
+      res.send(productsInfo);
+    });
+    // single order
+    app.get("/orders/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await orderData.findOne(query);
+      res.send(result);
+    });
 
-    // // delete order
+    // delete order
 
-    // app.delete("/orders/:id", async (req, res) => {
-    //   const id = req.params.id;
-    //   const query = { _id: new ObjectId(id) };
-    //   const result = await orderData.deleteOne(query);
-    //   res.send(result);
-    // });
+    app.delete("/orders/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await orderData.deleteOne(query);
+      res.send(result);
+    });
 
-    // // order data api
+    // order data api
 
-    // app.post("/orders", async (req, res) => {
-    //   const order = req.body;
-    //   const result = await orderData.insertOne(order);
-    //   res.send(result);
-    // });
+    app.post("/orders", async (req, res) => {
+      const order = req.body;
+      const result = await orderData.insertOne(order);
+      res.send(result);
+    });
 
-    // app.post("/CardInfo", async (req, res) => {
-    //   const order = req.body;
-    //   const result = await dataServer.insertOne(order);
-    //   res.send(result);
-    // });
+    app.post("/CardInfo", async (req, res) => {
+      const order = req.body;
+      const result = await dataServer.insertOne(order);
+      res.send(result);
+    });
 
     // await client.db("admin").command({ ping: 1 });
     console.log(
