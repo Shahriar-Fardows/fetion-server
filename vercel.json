@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "elegent-server",
+    "name": "fashion-server",
     "builds": [
       {
         "src": "./index.js",
